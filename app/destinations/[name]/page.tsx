@@ -1,8 +1,8 @@
 "use client";
+import DisplayListImages from "@/app/ui/DisplayListImages";
 import Footer from "@/app/ui/Footer";
 import MapsPlace from "@/app/ui/MapPlace";
 import Navbar from "@/app/ui/Navbar";
-import { DisplayListImages } from "@/app/umkm/[name]/page";
 import { Skeleton } from "@/components/ui/skeleton";
 import { allLocations } from "@/data/allLocation";
 import { destinations } from "@/data/destinations";

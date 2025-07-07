@@ -42,8 +42,8 @@ import {
 import MapsPlace from "@/app/ui/MapPlace";
 import type { FeatureCollection } from "geojson";
 import { Skeleton } from "@/components/ui/skeleton";
-import { DisplayListImages } from "@/app/umkm/[name]/page";
 import { TbMapSearch } from "react-icons/tb";
+import DisplayListImages from "@/app/ui/DisplayListImages";
 
 const mLocalizer = momentLocalizer(moment);
 
