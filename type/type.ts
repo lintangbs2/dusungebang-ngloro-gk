@@ -39,8 +39,8 @@ export type UMKMContact = {
   alamat: string;
   noTelp?: string;
   email?: string;
-  mediaSosial: MediaSosial[];
-  onlineShop: OnlineShop[];
+  mediaSosial?: MediaSosial[];
+  onlineShop?: OnlineShop[];
 };
 
 export type ImageModal = {

@@ -36,6 +36,8 @@ import { fetchWeather, weatherCodesMap } from "@/lib/meteo";
 import MapsPlace from "@/app/ui/MapPlace";
 import { FeatureCollection } from "geojson";
 import { TbMapSearch } from "react-icons/tb";
+import DisplayListImages from "@/app/ui/DisplayListImages";
+import DisplayListProductImages from "@/app/ui/DisplayListProductImages";
 
 function UMKMDetail() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -447,7 +449,7 @@ function UMKMDetail() {
                 </div>
 
                 {/* medsos */}
-                {data!.kontak.mediaSosial.length > 0 && (
+                {data!.kontak.mediaSosial && (
                   <>
                     <div className="w-full h-[0.5px] bg-[#dbd9d2] mt-1"></div>
                     <div className="md:grid md:grid-cols-8 md:items-start ">
@@ -492,7 +494,7 @@ function UMKMDetail() {
                 )}
 
                 {/* online shop */}
-                {data!.kontak!.onlineShop?.length > 0 && (
+                {data!.kontak!.onlineShop && (
                   <>
                     <div className="w-full h-[0.5px] bg-[#dbd9d2] mt-1"></div>
                     <div className="md:grid md:grid-cols-8 md:items-start ">
@@ -871,242 +873,6 @@ function UMKMDetail() {
       <Footer />
     </div>
   );
-}
-
-export function DisplayListImages({
-  images,
-  handleImageClick,
-  className,
-}: {
-  images: string[];
-  handleImageClick: (index: number) => void;
-  className?: string;
-}) {
-  if (images.length >= 3) {
-    return (
-      <div
-        className={`grid grid-cols-(--grid-3-image) gap-1 mt-4 h-[238px] md:h-[380px] ${className}`}
-      >
-        <div className="relative h-full  col-span-2  cursor-pointer">
-          <Image
-            src={images[0]}
-            alt="UMKM Image 1"
-            fill
-            className="rounded-lg object-cover"
-            onClick={() => {
-              handleImageClick(0);
-            }}
-          />
-        </div>
-
-        <div className="grid grid-rows-2 gap-1  ">
-          <div className="relative h-full w-full cursor-pointer">
-            <Image
-              src={images[1]}
-              alt="UMKM Image 2"
-              fill
-              className="rounded-lg object-cover"
-              onClick={() => {
-                handleImageClick(1);
-              }}
-            />
-          </div>
-
-          <div className="relative h-full w-full cursor-pointer">
-            <Image
-              src={images[2]}
-              alt="UMKM Image 3"
-              fill
-              className="rounded-lg object-cover"
-              onClick={() => {
-                handleImageClick(2);
-              }}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  } else if (images.length >= 2) {
-    return (
-      <div className="grid grid-cols-2 gap-2 mt-4">
-        <div className="relative w-full max-h-[380px] aspect-square cursor-pointer">
-          <Image
-            src={images[0]}
-            alt="UMKM Image 1"
-            fill
-            className="rounded-lg object-cover"
-            onClick={() => {
-              handleImageClick(0);
-            }}
-          />
-        </div>
-        <div className="relative w-full max-h-[380px] aspect-square cursor-pointer">
-          <Image
-            src={images[1]}
-            alt="UMKM Image 2"
-            fill
-            className="rounded-lg object-cover"
-            onClick={() => {
-              handleImageClick(1);
-            }}
-          />
-        </div>
-      </div>
-    );
-  } else if (images.length === 1) {
-    return (
-      <div className="grid grid-cols-1 mt-4">
-        <div className="relative max-w-[920px] w-full max-h-[380px] aspect-square cursor-pointer">
-          <Image
-            src={images[0]}
-            alt="UMKM Image 1"
-            fill
-            className="rounded-lg object-cover"
-            onClick={() => {
-              handleImageClick(0);
-            }}
-          />
-        </div>
-      </div>
-    );
-  }
-}
-
-export function DisplayListProductImages({
-  images,
-  handleImageClick,
-  className,
-  saveImagesProductModal,
-}: {
-  images: string[];
-  handleImageClick: (index: number) => void;
-  className?: string;
-  saveImagesProductModal: (images: ImageModal[]) => void;
-}) {
-  if (images.length >= 3) {
-    return (
-      <div
-        className={`grid grid-cols-2 gap-1 mt-4 h-[238px] md:h-[380px] ${className}`}
-      >
-        <div className="relative h-full    cursor-pointer">
-          <Image
-            src={images[0]}
-            alt="UMKM Image 1"
-            fill
-            className="rounded-lg object-cover"
-            onClick={() => {
-              handleImageClick(0);
-              saveImagesProductModal(
-                images.map((image, index) => ({
-                  thumbnail: image,
-                  original: image,
-                }))
-              );
-            }}
-          />
-        </div>
-
-        <div className="grid grid-rows-2 gap-1  ">
-          <div className="relative h-full w-full cursor-pointer">
-            <Image
-              src={images[1]}
-              alt="UMKM Image 2"
-              fill
-              className="rounded-lg object-cover"
-              onClick={() => {
-                handleImageClick(1);
-                saveImagesProductModal(
-                  images.map((image, index) => ({
-                    thumbnail: image,
-                    original: image,
-                  }))
-                );
-              }}
-            />
-          </div>
-
-          <div className="relative h-full w-full cursor-pointer">
-            <Image
-              src={images[2]}
-              alt="UMKM Image 3"
-              fill
-              className="rounded-lg object-cover"
-              onClick={() => {
-                handleImageClick(2);
-                saveImagesProductModal(
-                  images.map((image, index) => ({
-                    thumbnail: image,
-                    original: image,
-                  }))
-                );
-              }}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  } else if (images.length >= 2) {
-    return (
-      <div className="grid grid-cols-2 gap-2 mt-4">
-        <div className="relative w-full max-h-[380px] aspect-square cursor-pointer">
-          <Image
-            src={images[0]}
-            alt="UMKM Image 1"
-            fill
-            className="rounded-lg object-cover"
-            onClick={() => {
-              handleImageClick(0);
-              saveImagesProductModal(
-                images.map((image, index) => ({
-                  thumbnail: image,
-                  original: image,
-                }))
-              );
-            }}
-          />
-        </div>
-        <div className="relative w-full max-h-[380px] aspect-square cursor-pointer">
-          <Image
-            src={images[1]}
-            alt="UMKM Image 2"
-            fill
-            className="rounded-lg object-cover"
-            onClick={() => {
-              handleImageClick(1);
-              saveImagesProductModal(
-                images.map((image, index) => ({
-                  thumbnail: image,
-                  original: image,
-                }))
-              );
-            }}
-          />
-        </div>
-      </div>
-    );
-  } else if (images.length === 1) {
-    return (
-      <div className="grid grid-cols-1 mt-4">
-        <div className="relative max-w-[920px] w-full max-h-[380px] aspect-square cursor-pointer">
-          <Image
-            src={images[0]}
-            alt="UMKM Image 1"
-            fill
-            className="rounded-lg object-cover"
-            onClick={() => {
-              handleImageClick(0);
-              saveImagesProductModal(
-                images.map((image, index) => ({
-                  thumbnail: image,
-                  original: image,
-                }))
-              );
-            }}
-          />
-        </div>
-      </div>
-    );
-  }
 }
 
 export default UMKMDetail;
