@@ -17,9 +17,7 @@ function Navbar() {
         <div
           className={`w-full px-[12px] fixed py-12  backdrop-blur-lg lg:backdrop-blur-none lg:py-0 transition-[top]
         duration-150 ${
-          showMenu
-            ? "top-0"
-            : "top-[-100%] lg:top-10 lg:left-[35%]"
+          showMenu ? "top-0" : "top-[-100%] lg:top-10 lg:left-[35%]"
         }`}
         >
           {/* mobile */}
@@ -63,6 +61,17 @@ function Navbar() {
              active:after:w-[70%] "
               >
                 UMKM
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/destinations"
+                className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
+              after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
+             active:after:w-[70%] "
+              >
+                Destinasi Wisata
               </a>
             </li>
 
@@ -119,6 +128,17 @@ function Navbar() {
              hover:after:w-[70%] "
               >
                 UMKM
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/destinations"
+                className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
+              after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
+             hover:after:w-[70%] "
+              >
+                Destinasi Wisata
               </a>
             </li>
 

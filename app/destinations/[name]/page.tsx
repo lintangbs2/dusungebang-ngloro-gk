@@ -33,6 +33,8 @@ import {
 } from "react-icons/ti";
 import ReactImageGallery from "react-image-gallery";
 import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+
 
 function DestinationPage() {
   const [isOpen, setIsOpen] = React.useState(false);
