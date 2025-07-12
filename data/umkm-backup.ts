@@ -8,7 +8,7 @@ export const dataUMKMUnggulan: UMKMCard[] = [
     title: "DR Snack",
     image: "/img/mojodisplay.webp",
     alt: "DR Snack",
-    kelurahan: "Gebang",
+    dusun: "Gebang",
     summary: `DR Snack merupakan UMKM milik Bu Marsini, warga RT 18 Padukuhan Gebang, yang menghadirkan berbagai makanan olahan dari bahan lokal seperti singkong dan kacang tolo. Produk unggulannya meliputi brownies singkong, donat singkong, hingga bola-bola singkong keju yang nikmat dan inovatif. Dengan mengangkat potensi pangan lokal, DR Snack tidak hanya mendukung ketahanan pangan desa, tetapi juga membuka peluang ekonomi kreatif bagi warga. Cocok sebagai oleh-oleh khas atau sajian saat bersantai, DR Snack menjadi salah satu kebanggaan kuliner dari Desa Gebang.`,
     description: `Batik Mojo adalah salah satu jenis batik khas yang berasal dari  Kalurahan Jetis, Kecamatan Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta. Batik ini memiliki kekhasan tersendiri yang membedakannya dari batik-batik daerah lain, baik dari segi motif, warna, maupun filosofi yang terkandung di dalamnya. 
       
@@ -83,7 +83,7 @@ export const dataUMKMUnggulan: UMKMCard[] = [
     title: "DR Snack",
     image: "/img/marsini.jpeg",
     alt: "DR Snack",
-    kelurahan: "Gebang",
+    dusun: "Gebang",
     summary: `DR Snack merupakan UMKM milik Bu Marsini, warga RT 18 Padukuhan Gebang, yang menghadirkan berbagai makanan olahan dari bahan lokal seperti singkong dan kacang tolo. Produk unggulannya meliputi brownies singkong, donat singkong, hingga bola-bola singkong keju yang nikmat dan inovatif. Dengan mengangkat potensi pangan lokal, DR Snack tidak hanya mendukung ketahanan pangan desa, tetapi juga membuka peluang ekonomi kreatif bagi warga. Cocok sebagai oleh-oleh khas atau sajian saat bersantai, DR Snack menjadi salah satu kebanggaan kuliner dari Desa Gebang.`,
     description: `Batik Mojo adalah salah satu jenis batik khas yang berasal dari  Kalurahan Jetis, Kecamatan Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta. Batik ini memiliki kekhasan tersendiri yang membedakannya dari batik-batik daerah lain, baik dari segi motif, warna, maupun filosofi yang terkandung di dalamnya. 
       
@@ -192,7 +192,7 @@ export const dataUMKMUnggulan: UMKMCard[] = [
     title: "Lemper Benguk",
     image: "/img/lemper-benguk.jpg",
     alt: "Lemper Benguk",
-    kelurahan: "Jetis",
+    dusun: "Jetis",
     summary: `Lemper benguk asli Jetis, Gunungkidul adalah makanan khas yang terbuat dari koro benguk, sejenis kacang lokal yang diolah sebagai pengganti ketan dalam lemper tradisional. Kudapan unik ini berasal dari Kalurahan Jetis, Kecamatan Saptosari, dan menjadi simbol inovasi kuliner yang memanfaatkan hasil pertanian lokal. Dengan cita rasa gurih dan tekstur padat, lemper benguk kini dikembangkan sebagai ikon kuliner sekaligus sarana pemberdayaan ekonomi masyarakat setempat.`,
     description: `Lemper benguk adalah varian unik dari lemper tradisional yang berasal dari Kalurahan Jetis, Kecamatan Saptosari, Gunungkidul. Tidak seperti lemper pada umumnya yang menggunakan beras ketan, lemper ini menggunakan bahan utama berupa koro benguk, sejenis kacang lokal yang banyak tumbuh di wilayah tersebut. Koro benguk terlebih dahulu direndam selama beberapa hari untuk menghilangkan zat racunnya, lalu direbus hingga empuk, dihancurkan, dan dibentuk menjadi adonan padat. Adonan ini kemudian diberi isian berupa abon ayam atau sapi, dibungkus dengan daun pisang, dan dikukus hingga matang.
 
@@ -260,7 +260,7 @@ Lemper benguk tidak hanya dikenal sebagai kudapan khas, tetapi juga menjadi bagi
 
     Abon lele ini tidak hanya lezat, tetapi juga kaya nutrisi karena mengandung protein tinggi, omega-3, fosfor, kalsium, dan vitamin B12. Kandungan gizi tersebut menjadikan abon lele sebagai makanan sehat yang cocok untuk membantu pertumbuhan anak dan mencegah stunting. Produk ini juga menjadi solusi praktis dalam memperkenalkan konsumsi ikan dalam pola makan sehari-hari. Selain manfaat gizinya, abon lele Jetis juga berperan penting dalam mendukung ketahanan pangan lokal serta memberikan nilai tambah ekonomi bagi warga melalui pemasaran di pasar tradisional maupun secara daring. Inisiatif ini mencerminkan sinergi antara kearifan lokal dan inovasi pangan dalam meningkatkan kesejahteraan masyarakat.`,
     summary: `Abon lele adalah olahan kering dari daging ikan lele yang diproduksi secara mandiri oleh masyarakat setempat, terutama oleh kelompok ibu-ibu PKK dan UMKM. Produk ini dihasilkan melalui proses pengolahan tradisional yang memanfaatkan rempah-rempah alami, sehingga menghasilkan abon yang gurih, bergizi, dan tahan lama. Selain sebagai sumber pangan sehat, abon lele juga menjadi salah satu bentuk pemberdayaan ekonomi dan inovasi pangan lokal di wilayah Jetis.`,
-    kelurahan: "Jetis",
+    dusun: "Jetis",
     rangeHarga: "Rp10.000-Rp100.000",
     latitude: -8.039368294633421,
     longitude: 110.48893996869498,
@@ -310,7 +310,7 @@ Lemper benguk tidak hanya dikenal sebagai kudapan khas, tetapi juga menjadi bagi
     alt: "Lempeng Thiwul",
     latitude: -8.035355951771715,
     longitude: 110.48949996476786,
-    kelurahan: "Ngloro",
+    dusun: "Ngloro",
     images: ["/img/lempeng-thiwul.jpeg"],
     rangeHarga: "Rp10.000-Rp100.000",
     kontak: {
@@ -367,7 +367,7 @@ Lemper benguk tidak hanya dikenal sebagai kudapan khas, tetapi juga menjadi bagi
     longitude: 110.49600616489971,
     alt: "Peyek",
     images: ["/img/peyek.jpeg"],
-    kelurahan: "Ngloro",
+    dusun: "Ngloro",
     rangeHarga: "Rp10.000-Rp100.000",
     kontak: {
       namaPemilik: "Ibu Nurul",
