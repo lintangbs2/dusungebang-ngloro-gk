@@ -110,7 +110,7 @@ function EventDetail() {
   };
 
   const [descriptions, setDescriptions] = useState<string[]>([]);
-  const removedName = name.replace(/%20/g, " ");
+  const removedName = name.replaceAll(/%20/g, " ");
 
   const [viewState, setViewState] = React.useState({
     longitude: 100,

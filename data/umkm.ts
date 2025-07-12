@@ -207,4 +207,65 @@ Dengan komitmen pada mutu dan pelayanan, DR Snack terus berinovasi dalam penyaji
       },
     ],
   },
+  {
+    id: 4,
+    title: "Toko Kelontong Ibu Isti",
+    image: "/img/kelontong-isti/kelontong-isti4.jpeg",
+    summary: `Toko Kelontong Bu Isti adalah usaha mikro yang menyediakan berbagai kebutuhan pokok dan perlengkapan rumah tangga untuk warga desa. Dengan harga terjangkau dan lokasi yang mudah dijangkau, toko ini menjadi pilihan utama masyarakat dalam memenuhi kebutuhan sehari-hari secara praktis dan cepat.`,
+    description: `Toko Kelontong Bu Isti merupakan salah satu UMKM yang tumbuh dan berkembang di tengah masyarakat desa, menyediakan berbagai kebutuhan pokok dan perlengkapan rumah tangga sehari-hari. Usaha ini dikelola langsung oleh Ibu Isti, seorang pelaku usaha lokal yang dengan telaten melayani warga sekitar dengan produk yang lengkap dan harga yang bersahabat. Mulai dari sembako seperti beras, gula, minyak goreng, hingga kebutuhan dapur, sabun, dan alat tulis, semuanya tersedia dalam satu tempat.
+ Berlokasi strategis di tengah permukiman warga, toko ini memudahkan masyarakat dalam berbelanja kebutuhan harian tanpa harus bepergian jauh ke pusat kota. Pelayanan yang ramah dan suasana kekeluargaan menjadi ciri khas Toko Kelontong Bu Isti, menjadikannya tidak hanya tempat belanja, tetapi juga tempat berkumpul dan berbagi informasi antarwarga.
+ Keberadaan Toko Kelontong Bu Isti memberikan kontribusi positif terhadap perekonomian desa. Selain menyuplai kebutuhan warga, toko ini juga menjadi tempat distribusi produk-produk lokal seperti jajanan rumahan, telur ayam kampung, atau sayuran hasil kebun warga sekitar. Dengan semangat kewirausahaan dan kepedulian terhadap lingkungan sekitar, Toko Kelontong Bu Isti terus berkembang sebagai bagian penting dari ekosistem ekonomi desa yang mandiri dan berdaya saing.`,
+    latitude: -8.06199439198048,
+    longitude: 110.49574741138358,
+    alt: "Kelontong",
+    images: [
+      "/img/kelontong-isti/kelontong-isti4.jpeg",
+      "/img/kelontong-isti/kelontong-isti.jpeg",
+      "/img/kelontong-isti/kelontong-isti2.jpeg",
+      "/img/kelontong-isti/kelontong-isti3.jpeg",
+    ],
+    dusun: "Gebang",
+    rangeHarga: "Rp1.000-Rp100.000",
+    kontak: {
+      namaPemilik: "Ibu Isti",
+      namaUsaha: "Toko Kelontong Bu Isti",
+      alamat:
+        "Jl. Gebang RT 16 ,Gebang, Ngloro, Kec. Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871",
+      noTelp: "",
+      mediaSosial: [],
+      onlineShop: [],
+    },
+    kategoriUsaha: "Toko Kelontong",
+    products: [],
+  },
+  {
+    id: 5,
+    title: "Kelontong Abi",
+    image: "/img/kelontong-abi/kelontong-abi.jpeg",
+    summary: `Toko Kelontong Abi merupakan usaha mikro yang menyediakan berbagai kebutuhan sehari-hari bagi warga sekitar, mulai dari bahan makanan pokok, alat mandi, hingga perlengkapan rumah tangga. Berlokasi di tengah desa, Toko Kelontong Abi menjadi andalan masyarakat dalam memenuhi kebutuhan harian dengan harga terjangkau dan pelayanan ramah.`,
+    description: `Toko Kelontong Abi adalah salah satu UMKM unggulan di desa yang menyediakan berbagai macam kebutuhan pokok dan perlengkapan rumah tangga bagi masyarakat. Dikelola secara mandiri oleh warga lokal, toko ini hadir sebagai solusi praktis bagi warga desa untuk mendapatkan barang kebutuhan sehari-hari tanpa harus bepergian jauh ke kota. Produk yang tersedia cukup lengkap, mulai dari beras, gula, minyak goreng, mie instan, sabun, hingga perlengkapan kebersihan rumah tangga lainnya.
+  Dengan lokasi yang strategis di tengah pemukiman warga, Toko Kelontong Abi menjadi tempat belanja andalan masyarakat sekitar. Selain menawarkan harga yang bersaing, toko ini juga dikenal dengan pelayanan yang ramah dan suasana kekeluargaan yang hangat, mencerminkan semangat gotong royong khas desa. Keberadaan toko ini turut mendukung roda perekonomian lokal dengan memberdayakan produk-produk dari petani dan pelaku usaha desa.
+
+UMKM ini juga terbuka terhadap inovasi dan perkembangan zaman, termasuk menjajaki peluang digitalisasi dalam layanan pemesanan dan pembayaran. Ke depan, Toko Kelontong Abi diharapkan terus tumbuh dan berkembang, menjadi contoh usaha kecil yang mampu bertahan dan beradaptasi, sekaligus memperkuat ketahanan ekonomi desa melalui pelayanan yang berkualitas dan berorientasi pada kebutuhan masyarakat.`,
+    latitude: -8.062070596237543,
+    longitude: 110.49378329602115,
+    alt: "Kelontong",
+    images: [
+      "/img/kelontong-abi/kelontong-abi.jpeg",
+      "/img/kelontong-abi/kelontong-abi2.jpeg",
+    ],
+    dusun: "Gebang",
+    rangeHarga: "Rp1.000-Rp100.000",
+    kontak: {
+      namaPemilik: "Ibu Hesti",
+      namaUsaha: "Toko Kelontong Abi",
+      alamat:
+        "RT 18 ,Gebang, Ngloro, Kec. Saptosari, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta 55871",
+      noTelp: "",
+      mediaSosial: [],
+      onlineShop: [],
+    },
+    kategoriUsaha: "Toko Kelontong",
+    products: [],
+  },
 ];

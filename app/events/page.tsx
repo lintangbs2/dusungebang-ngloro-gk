@@ -48,7 +48,7 @@ function EventList() {
         name: event.name,
         latitude: event.latitude,
         longitude: event.longitude,
-        hrefLink: `/events/${event.name.replace(/\s+/g, "-")}`,
+        hrefLink: `/events/${event.name.replaceAll(/\s+/g, "-")}`,
         thumbnail: event.thumbnail,
         summary: event.description,
         address: event.address,

@@ -2,6 +2,10 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 
+const placeImageMap = {
+  "": "",
+};
+
 function NgloroPlace() {
   useEffect(() => {
     document.querySelectorAll("image").forEach((e) => {
@@ -16,7 +20,7 @@ function NgloroPlace() {
           document.getElementById("place")!.style.left = x + "px";
         };
         document.getElementById("place")!.style.opacity = "100%";
-        document.getElementById("placeName")!.innerText = e.id.replace(
+        document.getElementById("placeName")!.innerText = e.id.replaceAll(
           /_/g,
           ` `
         );
@@ -43,8 +47,8 @@ function NgloroPlace() {
            relative w-50 h-44 "
         >
           <Image
-            src="/img/pantai-ngobaran.jpg"
-            alt="pantai ngobaran"
+            src="/img/balai-dusun-gebang/balai-dusun-gebang1.jpeg"
+            alt="Balai Dusun Gebang"
             fill
             className=" object-cover"
           />
@@ -15455,12 +15459,18 @@ AAAAAAAAgAEBAAAAAAAAAAAGBAAAAAAAAAAAGBAAAAAAAAAAAGBAAAAAAAAAAACAAQEAAAAAAAAA
 AAYEAAAAAAAAAAAYEAAAAAAAAAAAYEAAAAAAAAAAAICBABASZpiHw4hSAAAAAElFTkSuQmCC"
           transform="matrix(9.765625e-03 0 0 9.765625e-03 986.8101 928.3135)"
         ></image>
-        <image
-          style={{ overflow: "visible" }}
-          width="2048"
-          height="2048"
-          id="Balai_dusun_gebang"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACAAAAAgACAYAAACyp9MwAAAACXBIWXMABG3jAARt4wGuoDNcAAAg
+        <a
+          href="https://maps.app.goo.gl/o2wCzBagPvaDyWyN6"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          <image
+            style={{ overflow: "visible" }}
+            width="2048"
+            height="2048"
+            id="Balai_Dusun_Gebang"
+            xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACAAAAAgACAYAAACyp9MwAAAACXBIWXMABG3jAARt4wGuoDNcAAAg
 AElEQVR4XuzdebD2d1ke8OsmiYAkLCJWDUjckLpAkS3oKKIoOHWktEWFVkS00lbF6eJg1YriMmqX
 kWpR67hiK4piHGQTnapVWQxIVcBoAAUdUQgaMQkoyd0/ztuQYM77Pec5z/JbPp+ZZzJkrt/7T94Z
 5pzfdV9PdXcAAACAZaqqeyT57+f+55d399vOlwcAAADm63ajAAAAADBPVfW4JK9N8rhzn9ee+3cA
@@ -15972,8 +15982,10 @@ AAAAAAECAAAAAAAAAAAIEAAAAAAAAAAAQIAAAAAAAAAAAAACBAAAAAAAAAAAECAAAAAAAAAAAIAA
 AQAAAAAAAAAABAgAAAAAAAAAACBAAAAAAAAAAAAAAQIAAAAAAAAAAAgQAAAAAAAAAABAgAAAAAAA
 AAAAAAIEAAAAAAAAAAAQIAAAAAAAAAAAgAABAAAAAAAAAAAECAAAAAAAAAAAIEAAAAAAAAAAAAAB
 AgAAAAAAAAAACHgBEELEzW13EWsAAAAASUVORK5CYII="
-          transform="matrix(9.765625e-03 0 0 9.765625e-03 994.8533 640)"
-        ></image>
+            transform="matrix(9.765625e-03 0 0 9.765625e-03 994.8533 640)"
+          ></image>
+        </a>
+
         <image
           style={{ overflow: "visible" }}
           width="2048"

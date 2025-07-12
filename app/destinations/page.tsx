@@ -22,7 +22,7 @@ function Destinations() {
       name: destination.name,
       latitude: destination.latitude,
       longitude: destination.longitude,
-      hrefLink: `/destinations/${destination.name.replace(/\s+/g, "-")}`,
+      hrefLink: `/destinations/${destination.name.replaceAll(/\s+/g, "-")}`,
       thumbnail: destination.thumbnail,
       summary: destination.description,
       address: destination.address,

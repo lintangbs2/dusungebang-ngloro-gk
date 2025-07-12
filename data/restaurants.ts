@@ -859,7 +859,7 @@ restaurantsData = restaurantsData.map((restaurant) => {
       alamat: restaurant.address,
       noTelp: "08123456789",
       email:
-        "contact@" + restaurant.name.toLowerCase().replace(/\s/g, "") + ".com",
+        "contact@" + restaurant.name.toLowerCase().replaceAll(/\s/g, "") + ".com",
     },
     masakan: [Cuisine.Asian],
     fasilitas: ["Tempat Parkir", "Teras"],

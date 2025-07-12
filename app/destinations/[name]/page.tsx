@@ -126,7 +126,7 @@ function DestinationPage() {
 
   useEffect(() => {
     let foundData = destinations.find(
-      (dest) => dest.name === name.replace("%20", " ")
+      (dest) => dest.name === name.replaceAll("%20", " ")
     );
     setViewState({
       longitude: foundData?.longitude || 100,
