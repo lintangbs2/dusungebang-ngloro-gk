@@ -35,7 +35,6 @@ import ReactImageGallery from "react-image-gallery";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-
 function DestinationPage() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isOpenMap, setIsOpenMap] = useState(true);
@@ -227,7 +226,7 @@ function DestinationPage() {
             </div>
           </div>
           {/* map & contact */}
-          <div className="grid grid-cols-2  gap-2 mt-3">
+          <div className="grid grid-cols-2  gap-2 mt-3 md:hidden">
             <div
               className="flex flex-col gap-1 items-center justify-center p-2 rounded-lg bg-[#F0EFEB] 
           cursor-pointer lg:hidden"
@@ -270,14 +269,14 @@ function DestinationPage() {
           >
             <div className="flex flex-col items-start ">
               <span className="!text-[#272726] font-bold">Kontak</span>
-              <span className="!text-[#686867] ">
+              <span className="!text-[#686867] font-semibold">
                 {data?.information!.penanggungjawab}
               </span>
 
-              <span className="!text-[#686867]">
+              <span className="!text-[#686867]  font-semibold">
                 {data?.information!.email}
               </span>
-              <span className="!text-[#686867]">
+              <span className="!text-[#686867] font-semibold ">
                 {data?.information!.noTelp
                   ? ` ${data?.information.noTelp}`
                   : ``}
@@ -673,13 +672,13 @@ function DestinationPage() {
                       </span>
                     </div>
                     <div className="flex flex-col ">
-                      <span className="!text-[#686867] text-lg ">
+                      <span className="!text-[#686867] font-semibold  text-lg ">
                         {data?.information!.penanggungjawab}
                       </span>
-                      <span className="!text-[#686867]  text-lg">
+                      <span className="!text-[#686867] font-semibold   text-lg">
                         {data?.information!.email}
                       </span>
-                      <span className="!text-[#686867]  text-lg">
+                      <span className="!text-[#686867] font-semibold  text-lg">
                         {data?.information!.noTelp
                           ? ` ${data?.information.noTelp}`
                           : ``}

@@ -2,11 +2,22 @@
 import Footer from "@/app/ui/Footer";
 import Navbar from "@/app/ui/Navbar";
 import { dataUMKMUnggulan } from "@/data/umkm";
-import { ImageModal, ObjectLocation, UMKMCard } from "@/type/type";
+import {
+  ImageModal,
+  ObjectLocation,
+  UMKMCard,
+  UserLocation,
+} from "@/type/type";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { Map, Marker, NavigationControl, Popup } from "@vis.gl/react-maplibre";
+import {
+  GeolocateControl,
+  Map,
+  Marker,
+  NavigationControl,
+  Popup,
+} from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useParams } from "next/navigation";
 import {
@@ -38,6 +49,7 @@ import { FeatureCollection } from "geojson";
 import { TbMapSearch } from "react-icons/tb";
 import DisplayListImages from "@/app/ui/DisplayListImages";
 import DisplayListProductImages from "@/app/ui/DisplayListProductImages";
+import toast from "react-hot-toast";
 
 function UMKMDetail() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -51,6 +63,28 @@ function UMKMDetail() {
   const [saptosariGeojson, setSaptosariGeojson] = useState<FeatureCollection>();
   const [weatherIcon, setWeatherIcon] = useState<React.ReactNode>(null);
   const [modalDetailType, setModalDetailType] = useState<string>("false");
+  const [userLoc, setUserLoc] = useState<UserLocation>({
+    longitude: -100,
+    latitude: 40,
+  });
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLoc({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        },
+        (error) => {
+          toast.error(error.message);
+        }
+      );
+    } else {
+      toast.error("Geolocation is not supported by this browser.");
+    }
+  }, []);
 
   const weatherCodeToIconString = (code: number) => {
     switch (code) {
@@ -236,7 +270,7 @@ function UMKMDetail() {
       <div className="relative pt-20 lg:pt-32 container  pr-6">
         <h1 className="!text-[#272726] font-bold">{data?.title}</h1>
         <span className="!text-[#F3C725] font-bold">Produk UMKM</span>{" "}
-        <span className="!text-[#686867]">{data?.kelurahan}</span>
+        <span className="!text-[#686867]">{data?.dusun}</span>
         <div className="relative h-[202px] md:h-[500px] lg:h-[670px] flex-shrink-0 cursor-pointer mt-6">
           <Image
             src={data?.image!}
@@ -257,7 +291,7 @@ function UMKMDetail() {
           </div>
         </div>
         {/* map & contact */}
-        <div className="grid grid-cols-2  gap-2 mt-3">
+        <div className="grid grid-cols-2  gap-2 mt-3 md:hidden">
           <div
             className="flex flex-col gap-1 items-center justify-center p-2 rounded-lg bg-[#F0EFEB] 
           cursor-pointer "
@@ -284,8 +318,8 @@ function UMKMDetail() {
             }}
           >
             <TiContacts size={24} />
-            <span className="!text[#272726] font-semibold text-sm ">
-              Contact
+            <span className="!text[#272726] font-semifbold text-sm ">
+              Kontak
             </span>
           </div>
         </div>
@@ -300,11 +334,13 @@ function UMKMDetail() {
         >
           <div className="flex flex-col items-start ">
             <span className="!text-[#272726] font-bold">Kontak</span>
-            <span className="!text-[#686867] ">
+            <span className="!text-[#686867]  font-semibold">
               {data?.kontak!.namaPemilik}
             </span>
-            <span className="!text-[#686867]">{data?.kontak!.email}</span>
-            <span className="!text-[#686867]">
+            <span className="!text-[#686867]  font-semibold">
+              {data?.kontak!.email}
+            </span>
+            <span className="!text-[#686867]  font-semibold">
               {data?.kontak!.noTelp ? `Telepon ${data?.kontak.noTelp}` : ``}
             </span>
           </div>
@@ -449,7 +485,7 @@ function UMKMDetail() {
                 </div>
 
                 {/* medsos */}
-                {data!.kontak.mediaSosial && (
+                {data!.kontak.mediaSosial?.length! > 0 && (
                   <>
                     <div className="w-full h-[0.5px] bg-[#dbd9d2] mt-1"></div>
                     <div className="md:grid md:grid-cols-8 md:items-start ">
@@ -494,7 +530,7 @@ function UMKMDetail() {
                 )}
 
                 {/* online shop */}
-                {data!.kontak!.onlineShop && (
+                {data!.kontak!.onlineShop?.length! > 0 && (
                   <>
                     <div className="w-full h-[0.5px] bg-[#dbd9d2] mt-1"></div>
                     <div className="md:grid md:grid-cols-8 md:items-start ">
@@ -612,6 +648,19 @@ function UMKMDetail() {
                   mapStyle="https://tiles.openfreemap.org/styles/liberty"
                 >
                   <>
+                    <GeolocateControl
+                      position="bottom-right"
+                      positionOptions={{ enableHighAccuracy: true }}
+                      onGeolocate={(e) => {
+                        setUserLoc({
+                          latitude: e.coords.latitude,
+                          longitude: e.coords.longitude,
+                        });
+                      }}
+                      showAccuracyCircle={true}
+                      showUserLocation={true}
+                    />
+
                     {popupData ? (
                       <Popup
                         longitude={popupData.longitude}
@@ -824,7 +873,7 @@ function UMKMDetail() {
                   />
                 </div>
                 <div className="p-6 rounded-lg bg-[#F0EFEB]  w-92 h-44  flex flex-col gap-3 ">
-                  <span className="!text-[#272726] font-bold text-xl">
+                  <span className="!text-[#272726] font-bold text-2xl">
                     Cuaca hari ini
                   </span>
 
@@ -835,7 +884,7 @@ function UMKMDetail() {
                         <span className="font-bold text-4xl">
                           {temperature2m.toPrecision(2)}°C
                         </span>
-                        <span className="!text-[#686867] text-lg">
+                        <span className="!text-[#686867] font-semibold text-lg">
                           {
                             weatherCodesMap[
                               weatherCode as keyof typeof weatherCodesMap
@@ -846,20 +895,22 @@ function UMKMDetail() {
                     </div>
                   </div>
                 </div>
-                <div className="p-6 rounded-lg bg-[#F0EFEB]  w-92 h-44 flex flex-col items-start gap-3">
+                <div className="p-6 rounded-lg bg-[#F0EFEB]  w-92 h-38 flex flex-col items-start gap-3">
                   <div className="flex flex-col items-start ">
-                    <span className="!text-[#272726] font-bold text-xl">
+                    <span className="!text-[#272726] font-bold text-2xl">
                       Kontak
                     </span>
                   </div>
                   <div className="flex flex-col ">
-                    <span className="!text-[#686867] text-lg ">
+                    <span className="!text-[#686867] font-semibold text-lg">
                       {data?.kontak!.namaPemilik}
                     </span>
-                    <span className="!text-[#686867]  text-lg">
-                      {data?.kontak!.email}
-                    </span>
-                    <span className="!text-[#686867]  text-lg">
+                    {data?.kontak!.email ?? (
+                      <span className="!text-[#686867] font-semibold   text-lg">
+                        {data?.kontak!.email}
+                      </span>
+                    )}
+                    <span className="!text-[#686867] font-semibold   text-lg">
                       {data?.kontak!.noTelp ? ` ${data?.kontak.noTelp}` : ``}
                     </span>
                   </div>

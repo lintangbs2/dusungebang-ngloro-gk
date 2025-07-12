@@ -19,6 +19,11 @@ const recommendationData = [
     link: "/umkm",
     image: "/img/batik.jpg",
   },
+  {
+    title: "Destinasi Wisata Terdekat",
+    link: "/destinations",
+    image: "/img/pantai_ngeden.jpg",
+  },
 ];
 
 function Recommendation() {
@@ -45,7 +50,7 @@ function Recommendation() {
         </a>
       </div>
 
-      <div className="grid grid-cols-2 gap-y-2 gap-x-2 sm:grid-cols-2 md:gap-x-2 md:gap-y-2">
+      <div className="grid grid-cols-2 gap-y-2 gap-x-2 sm:grid-cols-3 md:gap-x-2 md:gap-y-2">
         {recommendationData.map((item, index) => (
           <a
             key={index}

@@ -1,7 +1,14 @@
 "use client";
-import { MapsPlaceProps, MapsProps } from "@/type/type";
-import React, { useEffect } from "react";
-import { Layer, Map, Marker, Source } from "@vis.gl/react-maplibre";
+import { MapsPlaceProps, MapsProps, UserLocation } from "@/type/type";
+import React, { useEffect, useState } from "react";
+import {
+  GeolocateControl,
+  Layer,
+  Map,
+  Marker,
+  NavigationControl,
+  Source,
+} from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { FaCircleDot } from "react-icons/fa6";
 
@@ -9,7 +16,7 @@ function MapsPlace(props: MapsPlaceProps) {
   const [viewState, setViewState] = React.useState({
     longitude: 110.50104239125935,
     latitude: -8.060683222228368,
-    zoom: 11,
+    zoom: 12,
   });
 
   useEffect(() => {
@@ -17,7 +24,7 @@ function MapsPlace(props: MapsPlaceProps) {
       setViewState({
         latitude: props.latitude,
         longitude: props.longitude,
-        zoom: 11,
+        zoom: 12,
       });
     }
   }, []);

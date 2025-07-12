@@ -6,8 +6,8 @@ function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <header className="fixed w-full bg-white shadow-md top-0 z-[10]">
-      <nav className="h-[50px] lg:h-[95px] flex flex-row justify-between items-center">
-        <a href="/" className="px-[12px] absolute left-2">
+      <nav className="h-[50px] lg:h-[95px] w-full flex flex-row justify-between items-center">
+        <a href="/" className="px-[12px] absolute left-5 md:left-2 lg:left-[15vw] xl:left-[22vw] 2xl:left-[25vw]">
           <img
             src={"/img/logo.png"}
             className="rounded-full w-[50px] h-[50px] lg:w-[60px] lg:h-[60px]"
@@ -15,10 +15,8 @@ function Navbar() {
         </a>
 
         <div
-          className={`w-full px-[12px] fixed py-12  backdrop-blur-lg lg:backdrop-blur-none lg:py-0 transition-[top]
-        duration-150 ${
-          showMenu ? "top-0" : "top-[-100%] lg:top-10 lg:left-[35%]"
-        }`}
+          className={`w-full md:max-w-[600px] md:left-1/2  md:-translate-x-1/2 lg:top-10 px-[12px] fixed py-12  backdrop-blur-lg lg:backdrop-blur-none lg:py-0 transition-[top]
+        duration-150  ${showMenu ? "top-0" : "top-[-100%]  "}`}
         >
           {/* mobile */}
           <ul className="text-center flex flex-col gap-4 lg:hidden">

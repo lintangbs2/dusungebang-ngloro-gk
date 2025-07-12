@@ -273,7 +273,7 @@ function EventDetail() {
             </div>
           </div>
           {/* map & contact */}
-          <div className="grid grid-cols-2  gap-2 mt-3">
+          <div className="grid grid-cols-2  gap-2 mt-3 md:hidden">
             <div
               className="flex flex-col gap-1 items-center justify-center p-2 rounded-lg bg-[#F0EFEB] 
           cursor-pointer "
@@ -315,21 +315,24 @@ function EventDetail() {
         }`}
           >
             <div className="flex flex-col items-start ">
+              <span className="!text-[#272726] font-bold">Kontak</span>
               <span className="!text-[#272726] font-bold">
                 {data?.information?.organisasi}
               </span>
-              <p className="!text-[#686867]">
-                {data?.information?.penanggungjawab}
-                <br />
+              <span className="!text-[#686867]  font-semibold">
+                {data?.information!.penanggungjawab}
+              </span>
+              {data?.information!.email ?? (
+                <span className="!text-[#686867]  font-semibold">
+                  {data?.information!.email}
+                </span>
+              )}
 
-                {data?.information?.noTelp
-                  ? `Telepon ${data?.information?.noTelp}`
+              <span className="!text-[#686867]  font-semibold">
+                {data?.information!.noTelp
+                  ? `Telepon ${data?.information.noTelp}`
                   : ``}
-                <br />
-                {data?.information?.email
-                  ? `Email ${data?.information?.email}`
-                  : ""}
-              </p>
+              </span>
             </div>
           </div>
           <div
@@ -727,7 +730,7 @@ function EventDetail() {
                     <span className="!text-[#272726] font-bold">
                       {data?.information?.organisasi}
                     </span>
-                    <p className="!text-[#686867]">
+                    <p className="!text-[#686867] ">
                       {data?.information?.penanggungjawab}
                       <br />
 
@@ -755,7 +758,7 @@ function EventDetail() {
                     />
                   </div>
                   <div className="p-6 rounded-lg bg-[#F0EFEB]  w-92 h-44  flex flex-col gap-3 ">
-                    <span className="!text-[#272726] font-bold text-xl">
+                    <span className="!text-[#272726] font-bold text-2xl">
                       Cuaca hari ini
                     </span>
 
@@ -766,7 +769,7 @@ function EventDetail() {
                           <span className="font-bold text-4xl">
                             {temperature2m.toPrecision(2)}°C
                           </span>
-                          <span className="!text-[#686867] text-lg">
+                          <span className="!text-[#686867]  font-semibold text-lg">
                             {
                               weatherCodesMap[
                                 weatherCode as keyof typeof weatherCodesMap
@@ -784,13 +787,13 @@ function EventDetail() {
                       </span>
                     </div>
                     <div className="flex flex-col ">
-                      <span className="!text-[#686867] text-lg ">
+                      <span className="!text-[#686867] font-semibold text-lg ">
                         {data?.information!.penanggungjawab}
                       </span>
-                      <span className="!text-[#686867]  text-lg">
+                      <span className="!text-[#686867] font-semibold text-lg">
                         {data?.information!.email}
                       </span>
-                      <span className="!text-[#686867]  text-lg">
+                      <span className="!text-[#686867] font-semibold text-lg">
                         {data?.information!.noTelp
                           ? ` ${data?.information.noTelp}`
                           : ``}

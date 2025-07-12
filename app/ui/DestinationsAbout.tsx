@@ -121,7 +121,7 @@ function DestinationsAbout() {
           <Popover>
             <PopoverTrigger
               className="flex items-center  gap-3 py-2 px-4 rounded-lg
-          bg-[#F0EFEB] shadow-md md:w-50"
+          bg-[#F0EFEB] shadow-md md:w-50 cursor-pointer"
             >
               <TbBeach size={20} />
               <span className="!text[#272726] ">Wisata Pantai</span>
@@ -149,7 +149,7 @@ function DestinationsAbout() {
           <Popover>
             <PopoverTrigger
               className="flex items-center  gap-3 py-2 px-4 rounded-lg
-          bg-[#F0EFEB] shadow-md md:w-50"
+          bg-[#F0EFEB] shadow-md md:w-50 cursor-pointer"
             >
               <Image
                 src="/img/icons/tradition.svg"
@@ -188,7 +188,7 @@ function DestinationsAbout() {
           <Popover>
             <PopoverTrigger
               className="flex items-center  gap-3 py-2 px-4 rounded-lg
-          bg-[#F0EFEB] shadow-md md:w-50"
+          bg-[#F0EFEB] shadow-md md:w-50 cursor-pointer"
             >
               <Image
                 src="/img/icons/muslim.svg"
@@ -226,7 +226,7 @@ function DestinationsAbout() {
           <Popover>
             <PopoverTrigger
               className="flex items-center  gap-3 py-2 px-4 rounded-lg
-          bg-[#F0EFEB] shadow-md md:w-50"
+          bg-[#F0EFEB] shadow-md md:w-50 cursor-pointer"
             >
               <Image
                 src="/img/icons/mountain.svg"
@@ -262,7 +262,7 @@ function DestinationsAbout() {
           <Popover>
             <PopoverTrigger
               className="flex items-center  gap-3 py-2 px-4 rounded-lg
-          bg-[#F0EFEB] shadow-md md:w-50"
+          bg-[#F0EFEB] shadow-md md:w-50 cursor-pointer"
             >
               <Image
                 src="/img/icons/culture.svg"

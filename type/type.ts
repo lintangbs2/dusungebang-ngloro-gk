@@ -8,7 +8,7 @@ export type UMKMCard = {
   alt: string;
   summary: string;
   description: string;
-  kelurahan: string;
+  dusun: string;
   images: string[];
   latitude: number;
   longitude: number;
@@ -159,4 +159,8 @@ export type DestinationInformation = {
   suitableFor: string; // Children, Families, Groups, Individual, Couples
   category: string[]; // Education, Nature, Active
   placeType: PlaceType; // indoor, outdoor, etc.
+};
+export type UserLocation = {
+  latitude: number;
+  longitude: number;
 };
