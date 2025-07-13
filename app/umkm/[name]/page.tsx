@@ -203,8 +203,8 @@ function UMKMDetail() {
     setData(foundData);
 
     fetchWeather({
-      lat: data?.latitude || -40,
-      lon: data?.longitude || 100,
+      lat: foundData?.latitude || -40,
+      lon: foundData?.longitude || 100,
     })
       .then((weather) => {
         setTemperateure2m(weather.temperature2m);

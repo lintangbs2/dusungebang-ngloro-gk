@@ -148,8 +148,8 @@ function EventDetail() {
     setEndDateView(viewEnd);
 
     fetchWeather({
-      lat: data?.latitude || -40,
-      lon: data?.longitude || 100,
+      lat: foundData?.latitude || -40,
+      lon: foundData?.longitude || 100,
     })
       .then((weather) => {
         setTemperature2m(weather.temperature2m);
