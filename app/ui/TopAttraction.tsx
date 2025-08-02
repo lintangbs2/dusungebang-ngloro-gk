@@ -65,7 +65,7 @@ function TopAttraction() {
               }}
             >
               <Image
-                src={item.thumbnail}
+                src={item.thumbnail!}
                 alt={item.name}
                 fill
                 className=" object-cover rounded-lg"
