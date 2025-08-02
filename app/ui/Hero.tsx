@@ -5,22 +5,25 @@ import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 
 const heroImages = [
   {
-    src: "/img/bali-pura.jpeg",
-    alt: "Pantai Lombok",
-    title: "Experience the beauty of Saptosari with us",
-    subtitle: "Discover the Land of a Thousand Hills",
+    src: "/img/hero/balai-dusun.jpg",
+    alt: "Balai Dusun Gebang",
+    title: "Selamat datang di Dusun Gebang",
+    subtitle:
+      "Dusun Asri di Perbukitan Karst, Kaya Potensi Alam dan Kearifan Lokal",
   },
   {
-    src: "/img/bali-gapura.jpg",
-    alt: "Pantai Kayu Arum",
-    title: "Explore the hidden gems of Saptosari",
-    subtitle: "Adventure awaits in every corner",
+    src: "/img/hero/kebun-singkong-gebang2.jpg",
+    alt: "Kebun Singkong Gebang",
+    title: "Jelajahi permata tersembunyi Dusun Ngloro",
+    subtitle:
+      "Temukan kekayaan budaya dan hasil bumi yang diolah dengan kearifan lokal",
   },
   {
-    src: "/img/bali-beach.jpeg",
+    src: "/img/hero/latihan-voli-gebang.jpg",
     alt: "Pantai Lombok 3",
-    title: "Unwind in the serene landscapes of Saptosari",
-    subtitle: "Nature's tranquility at its best",
+    title: "Bersama Tumbuh, Bersama Bergerak",
+    subtitle:
+      "Lapangan, peluh, dan semangat remaja di tengah desa yang penuh potensi",
   },
 ];
 
@@ -109,6 +112,9 @@ function Hero() {
                   <h1 className="text-center leading-[1.2] !text-headerOne text-shadow-headerOne font-semibold ">
                     {image.title}
                   </h1>
+                  <span className="!text-white text-center text-shadow-headerOne">
+                    {image.subtitle}
+                  </span>
                 </div>
               </div>
             </div>

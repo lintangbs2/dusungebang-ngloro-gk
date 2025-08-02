@@ -2,13 +2,19 @@
 import Footer from "@/app/ui/Footer";
 import Navbar from "@/app/ui/Navbar";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DisplayCards from "../ui/DisplayCards";
 import { FaArrowRight } from "react-icons/fa";
 import { UMKMCard } from "@/type/type";
-import { dataUMKMUnggulan } from "@/data/umkm";
+import { umkmFetcherCard } from "@/lib/api";
+import { Skeleton } from "@/components/ui/skeleton";
 
 function UMKM() {
+  const [currentItems, setCurrentItems] = useState<UMKMCard[]>([]);
+
+  useEffect(() => {
+    umkmFetcherCard().then((items) => setCurrentItems(items));
+  }, []);
   return (
     <div className="relative w-screen min-h-screen overflow-hidden">
       <Navbar />
@@ -42,7 +48,36 @@ function UMKM() {
           tumbuh bersama cita rasa dan mutu.
         </p>
 
-        <DisplayCards cards={dataUMKMUnggulan} />
+        {currentItems.length > 0 ? (
+          <DisplayCards cards={currentItems} />
+        ) : (
+          <>
+            <Skeleton
+              className="relative h-[168px] md:h-[360px] lg:h-[480px] *:
+            flex-shrink-0 cursor-pointer group hover:scale-[98%] active:scale-[98%] rounded-lg transition-all duration-400 
+                ease-in-out overflow-hidden"
+            ></Skeleton>
+            <div className="grid grid-cols-2 gap-1 md:grid-cols-3 mt-2">
+              <Skeleton
+                className="relative h-[168px] md:h-[360px] lg:h-[480px] flex-shrink-0 cursor-pointer
+                 group hover:scale-[98%] active:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden "
+              ></Skeleton>
+              <Skeleton
+                className="relative h-[168px] md:h-[360px] lg:h-[480px] flex-shrink-0 cursor-pointer
+                 group hover:scale-[98%] active:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden "
+              ></Skeleton>
+              <Skeleton
+                className="relative h-[168px] md:h-[360px] lg:h-[480px] flex-shrink-0 cursor-pointer
+                 group hover:scale-[98%] active:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden "
+              ></Skeleton>
+            </div>
+            <Skeleton
+              className="relative h-[168px] md:h-[360px] lg:h-[480px] *:
+            flex-shrink-0 cursor-pointer group hover:scale-[98%] active:scale-[98%] rounded-lg transition-all duration-400 
+                ease-in-out overflow-hidden"
+            ></Skeleton>
+          </>
+        )}
 
         <a
           className="group cursor-pointer flex items-center mt-1 gap-x-2"

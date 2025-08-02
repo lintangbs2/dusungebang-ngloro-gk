@@ -19,6 +19,12 @@ export type UMKMCard = {
   rangeHarga: string;
 };
 
+export type UMKMUnggulan = {
+  title: string;
+  image: string;
+  description: string;
+};
+
 export type Product = {
   nama: string;
   deskripsi: string;
@@ -98,7 +104,7 @@ export type EventSaptosari = {
   endDate: Date;
   openingHours: string[]; // informasi
   description: string;
-  thumbnail: string;
+  thumbnail?: string;
   summary: string;
   images?: string[];
   latitude: number;
@@ -138,6 +144,7 @@ export type MapsPlaceProps = {
 };
 
 export type Destination = {
+  id: number;
   name: string;
   thumbnail: string;
   images: string[];
@@ -163,4 +170,22 @@ export type DestinationInformation = {
 export type UserLocation = {
   latitude: number;
   longitude: number;
+};
+
+export type Article = {
+  id: number;
+  title: string;
+  summary: string;
+  content: string;
+  thumbnail: string;
+  postDate: Date;
+  penulis: string;
+  images?: string[];
+  kategori: string;
+  share: {
+    whatsapp?: string;
+    facebook?: string;
+    twitter?: string;
+    telegram?: string;
+  };
 };

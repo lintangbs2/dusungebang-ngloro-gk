@@ -7,6 +7,14 @@ import TopDestinations from "./ui/TopDestinations";
 import Recommendation from "./ui/Recommendation";
 import TopAttraction from "./ui/TopAttraction";
 import Events from "./ui/Events";
+import AboutGallery from "./ui/AboutGallery";
+import {
+  addDataArticles,
+  addDataDestinations,
+  addDataEvents,
+  addDataUMKM,
+} from "@/lib/addData";
+import RecentArticles from "./ui/RecentArticle";
 
 export default function Home() {
   return (
@@ -15,11 +23,16 @@ export default function Home() {
       <Hero />
       <div className="flex flex-col space-y-2  ">
         <About />
-        <TopDestinations />
         <Recommendation />
         <Events />
+        <RecentArticles />
+        <TopDestinations />
       </div>
       <TopAttraction />
+
+      <div className=" py-2 mt-[50px] container">
+        <AboutGallery />
+      </div>
 
       <Footer />
     </main>

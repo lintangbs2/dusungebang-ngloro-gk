@@ -13,8 +13,8 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Saptosari Berseri",
-  description: "saptosari berseri",
+  title: "Ngloro Berseri",
+  description: "Ngloro berseri",
 };
 
 export default function RootLayout({
@@ -24,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mulish.variable} ${lora.variable} antialiased`}>
+      <body
+        className={`${mulish.variable} ${lora.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

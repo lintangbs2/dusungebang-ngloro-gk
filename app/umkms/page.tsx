@@ -8,35 +8,31 @@ import { LiaMapMarkedAltSolid } from "react-icons/lia";
 import { ObjectLocation, UMKMCard } from "@/type/type";
 import ReactPaginate from "react-paginate";
 import Maps from "../ui/Map";
-import { CiMenuBurger } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { dataUMKMUnggulan } from "@/data/umkm";
+import { getDocs, query, collection } from "firebase/firestore";
+import { db, umkmFetcher } from "@/lib/api";
+import { Skeleton } from "@/components/ui/skeleton";
 
 function UMKMS() {
   const [showMap, setShowMap] = useState(false);
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 15;
   const endOffset = itemOffset + itemsPerPage;
-  const currentUMKMs = dataUMKMUnggulan.slice(itemOffset, endOffset);
-  const currentItems: ObjectLocation[] = currentUMKMs.map((umkm) => ({
-    id: umkm.id,
-    name: umkm.title,
-    latitude: umkm.latitude,
-    longitude: umkm.longitude,
-    hrefLink: `/umkm/${umkm.title}`,
-    thumbnail: umkm.image,
-    summary: umkm.description,
-    address: umkm.kontak.alamat,
-  }));
+
+  const [currentItems, setCurrentItems] = useState<ObjectLocation[]>([]);
 
   const pageCount = Math.ceil(dataUMKMUnggulan.length / itemsPerPage);
 
   const handlePageClick = (event: any) => {
     const newOffset = (event.selected * itemsPerPage) % dataUMKMUnggulan.length;
-   
+
     setItemOffset(newOffset);
   };
 
+  useEffect(() => {
+    umkmFetcher().then((items) => setCurrentItems(items));
+  }, []);
   return (
     <div className="relative w-screen min-h-screen overflow-x-hidden">
       {!showMap && <Navbar />}
@@ -67,12 +63,14 @@ function UMKMS() {
           </div>
         </div>
         <div className="w-full h-[90vh]">
-          <Maps
-            places={currentItems}
-            largeScreen={false}
-            centerLatitude={-8.039333447637466}
-            centerLongitude={110.49658308527756}
-          />
+          {currentItems.length > 0 && (
+            <Maps
+              places={currentItems}
+              largeScreen={false}
+              centerLatitude={-8.039333447637466}
+              centerLongitude={110.49658308527756}
+            />
+          )}
         </div>
       </div>
 
@@ -109,12 +107,19 @@ function UMKMS() {
         </div>
 
         {/* list umkms & map (jika lg screen) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="col-span-2">
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
-              {currentItems.map((umkm, index) => (
-                <UMKMCardComponent key={index} umkm={umkm} />
-              ))}
+              {currentItems.length > 0
+                ? currentItems.map((umkm, index) => (
+                    <UMKMCardComponent key={index} umkm={umkm} />
+                  ))
+                : Array.from({ length: 9 }).map((_, index) => (
+                    <Skeleton
+                      key={index}
+                      className="relative w-40 h-34 sm:w-44 sm:h-34 md:w-56 md:h-40 xl:w-70 xl:h-60"
+                    ></Skeleton>
+                  ))}
             </div>
 
             <ReactPaginate
@@ -131,12 +136,16 @@ function UMKMS() {
             />
           </div>
           <div className="hidden lg:block h-[95%]  w-full rounded-xl">
-            <Maps
-              places={currentItems}
-              largeScreen={true}
-              centerLatitude={-8.039333447637466}
-              centerLongitude={110.49658308527756}
-            />
+            {currentItems.length > 0 ? (
+              <Maps
+                places={currentItems}
+                largeScreen={true}
+                centerLatitude={-8.039333447637466}
+                centerLongitude={110.49658308527756}
+              />
+            ) : (
+              <Skeleton className="relative w-full h-full rounded-xl"></Skeleton>
+            )}
           </div>
         </div>
       </div>
@@ -147,20 +156,17 @@ function UMKMS() {
 
 function UMKMCardComponent({ umkm }: { umkm: ObjectLocation }) {
   return (
-    <a
-      className="group grid grid-cols-2 sm:grid-cols-1 gap-3"
-      href={`/umkm/${umkm.name}`}
-    >
+    <a className="group grid  sm:grid-cols-1 gap-3" href={`/umkm/${umkm.name}`}>
       {/* umkm image */}
       <div
-        className="relative w-40 h-34 sm:w-44 sm:h-34 md:w-56 md:h-44 xl:w-78 xl:h-60
-      group-hover:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden  "
+        className="relative w-40 h-34 sm:w-44 sm:h-34 md:w-56 md:h-40 xl:w-70 xl:h-60
+      group-hover:scale-[98%]  group-active:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden  "
       >
         <Image
           src={umkm.thumbnail!}
           alt={umkm.name}
           fill
-          className="rounded-lg object-cover group-hover:scale-110 transform ease-in-out
+          className="rounded-lg object-cover group-hover:scale-110 group-active:scale-110 transform ease-in-out
           duration-400 transition-transform"
         />
       </div>

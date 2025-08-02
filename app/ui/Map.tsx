@@ -15,10 +15,10 @@ function Maps(props: MapsProps) {
     latitude: centerLatitude,
     zoom: 13,
   });
-  //
+  
   const [popupData, setPopupData] = React.useState<ObjectLocation | undefined>(
     undefined
-  );
+);
   return (
     <Map
       {...viewState}
@@ -46,7 +46,7 @@ function Maps(props: MapsProps) {
               style={{ textDecoration: "none", border: "none" }}
               href={`${popupData.hrefLink}`}
             >
-              {/* restaurant image */}
+
               <div className="relative md:max-w-24 w-full md:h-24 ">
                 <Image
                   src={popupData.thumbnail!}
@@ -108,7 +108,7 @@ function Maps(props: MapsProps) {
                 {selectedPlace != null && !largeScreen && (
                   <a
                     className="absolute bottom-6 left-[50%] translate-x-[-50%] bg-white p-6
-                  grid grid-cols-2 w-80 h-32 rounded-xl gap-2 "
+                  grid grid-cols-2 w-80  rounded-xl gap-2 "
                     href={`${selectedPlace.hrefLink}`}
                   >
                     <div className="relative w-full h-full">

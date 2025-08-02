@@ -14,7 +14,7 @@ function DestinationsAbout() {
       <div className="grid grid-cols-1 md:grid-cols-5 md:gap-3 gap-y-3 md:grid-rows-2">
         <div
           className="group relative flex-shrink-0 row-span-2 max-w-[94%]  h-[300px]  md:h-full rounded-lg
-            hover:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
+            hover:scale-104  active:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
         "
         >
           <Image
@@ -22,13 +22,13 @@ function DestinationsAbout() {
             fill
             alt="umkm"
             className=" object-cover rounded-lg 
-            group-hover:scale-105 ease-in-out duration-400 "
+            group-hover:scale-105  group-active:scale-105 ease-in-out duration-400 "
           />
         </div>
 
         <div
           className="group relative flex-shrink-0 col-span-2  max-w-[94%]  h-[300px] rounded-lg
-         hover:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
+         hover:scale-104  active:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
         "
         >
           <Image
@@ -36,14 +36,14 @@ function DestinationsAbout() {
             fill
             alt="umkm"
             className=" object-cover rounded-lg
-              hover:scale-105 ease-in-out duration-400
+              hover:scale-105 active:scale-105 ease-in-out duration-400
             "
           />
         </div>
 
         <div
           className="group relative flex-shrink-0 col-span-2  max-w-[94%] h-[300px] rounded-lg
-         hover:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
+         hover:scale-104  active:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
         "
         >
           <Image
@@ -51,14 +51,14 @@ function DestinationsAbout() {
             fill
             alt="umkm"
             className=" object-cover rounded-lg
-             hover:scale-105 ease-in-out duration-400
+             hover:scale-105 active:scale-105 ease-in-out duration-400
             "
           />
         </div>
 
         <div
           className="group relative flex-shrink-0 col-span-2  max-w-[94%] h-[300px] rounded-lg
-                 hover:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
+                 hover:scale-104 active:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
         "
         >
           <Image
@@ -66,13 +66,13 @@ function DestinationsAbout() {
             fill
             alt="umkm"
             className=" object-cover rounded-lg
-              hover:scale-105 ease-in-out duration-400
+              hover:scale-105 active:scale-105  ease-in-out duration-400
             "
           />
         </div>
         <div
           className="group relative flex-shrink-0 col-span-2 max-w-[94%] h-[300px] rounded-lg
-                         hover:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
+                         hover:scale-104 active:scale-104 transition-all duration-400 ease-in-out  overflow-hidden
         "
         >
           <Image
@@ -80,7 +80,7 @@ function DestinationsAbout() {
             fill
             alt="umkm"
             className=" object-cover rounded-lg
-            hover:scale-105 ease-in-out duration-400
+            hover:scale-105 active:scale-105 ease-in-out duration-400
             "
           />
         </div>

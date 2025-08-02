@@ -5,11 +5,11 @@ import { IoClose, IoMenu } from "react-icons/io5";
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <header className="fixed w-full bg-white shadow-md top-0 z-[10]">
+    <header className="fixed w-full bg-white shadow-md top-0 z-[85]">
       <nav className="h-[50px] lg:h-[95px] w-full flex flex-row justify-between items-center">
         <a
           href="/"
-          className="px-[12px] absolute left-5 md:left-2 lg:left-[6vw] xl:left-[15vw] 2xl:left-[18vw]"
+          className="px-[12px] absolute left-5 md:left-5 lg:left-[5vw] xl:left-[14vw] 2xl:left-[18vw]"
         >
           <img
             src={"/img/logo.png"}
@@ -18,7 +18,7 @@ function Navbar() {
         </a>
 
         <div
-          className={`w-full md:max-w-[800px] md:left-1/2  md:-translate-x-1/2 lg:top-10 px-[12px] fixed py-12  backdrop-blur-lg lg:backdrop-blur-none lg:py-0 transition-[top]
+          className={`w-full lg:max-w-[800px] md:left-1/2  md:-translate-x-1/2 lg:top-10 px-[12px] fixed py-12  backdrop-blur-lg lg:backdrop-blur-none lg:py-0 transition-[top]
         duration-150  ${showMenu ? "top-0" : "top-[-100%]  "}`}
         >
           {/* mobile */}
@@ -33,25 +33,37 @@ function Navbar() {
                 Home
               </a>
             </li>
+
             <li>
               <a
-                href="/about"
+                href="/profil"
                 className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
               after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
              active:after:w-[70%] "
               >
-                About
+                Profil
               </a>
             </li>
 
             <li>
               <a
-                href="/events"
+                href="/artikel"
                 className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
               after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
              active:after:w-[70%] "
               >
-                Kebudayaan & Tradisi
+                Artikel
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/kebudayaan"
+                className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
+              after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
+             active:after:w-[70%] "
+              >
+                Kebudayaan
               </a>
             </li>
             <li>
@@ -86,10 +98,21 @@ function Navbar() {
                 Booklet
               </a>
             </li>
+
+            <li>
+              <a
+                href="/galeri"
+                className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
+              after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
+             active:after:w-[70%] "
+              >
+                Galeri
+              </a>
+            </li>
           </ul>
 
           {/* desktop */}
-          <ul className="hidden lg:flex lg:flex-row lg:gap-[50px]">
+          <ul className="hidden lg:flex lg:flex-row lg:gap-[30px] z-[85]">
             <li className="">
               <a
                 href="/"
@@ -100,25 +123,37 @@ function Navbar() {
                 Home
               </a>
             </li>
-            <li>
+
+            <li className="">
               <a
-                href="/about"
+                href="/profil"
                 className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
               after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
              hover:after:w-[70%] "
               >
-                About
+                Profil
+              </a>
+            </li>
+
+            <li className="">
+              <a
+                href="/artikel"
+                className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
+              after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
+             hover:after:w-[70%] "
+              >
+                Artikel
               </a>
             </li>
 
             <li>
               <a
-                href="/events"
+                href="/kebudayaan"
                 className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
               after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
              hover:after:w-[70%] "
               >
-                Kebudayaan & Tradisi
+                Kebudayaan
               </a>
             </li>
             <li>
@@ -151,6 +186,17 @@ function Navbar() {
              hover:after:w-[70%] "
               >
                 Booklet
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/galeri"
+                className="relative text-[#304F47] after:w-0 after:h-[2px] after:bg-[#304F47] 
+              after:transition-[width] after:duration-300 after:absolute after:left-0 after:bottom-[-8px] 
+             hover:after:w-[70%] "
+              >
+                Galeri
               </a>
             </li>
           </ul>

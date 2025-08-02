@@ -1,6 +1,5 @@
-import { UMKMCard } from "@/type/type";
+import { UMKMCard, UMKMUnggulan } from "@/type/type";
 
-// shopee, tokopedia, tiktokshop, facebook
 
 export const dataUMKMUnggulan: UMKMCard[] = [
   {
@@ -269,3 +268,57 @@ UMKM ini juga terbuka terhadap inovasi dan perkembangan zaman, termasuk menjajak
     products: [],
   },
 ];
+
+
+export const dataUMKMUnggulanHome: UMKMUnggulan[] = [
+  { 
+    title: "DR Snack",
+    description: "DR Snack adalah UMKM yang bergerak di bidang kuliner, khususnya makanan olahan hasil tani lokal, jajanan pasar, dan makanan oleh-oleh. Menyediakan berbagai pilihan camilan tradisional seperti arem-arem, prastel, risol, puding, sosis solo, dan aneka jajanan lainnya, DR Snack melayani pemesanan sesuai kebutuhan pelanggan, baik untuk acara keluarga, hajatan, maupun konsumsi harian. Dengan bahan berkualitas dan cita rasa rumahan, DR Snack turut mendukung pemanfaatan hasil pertanian lokal serta pelestarian kuliner tradisional.",
+    image: "/img/dr-snack/marsini.jpeg"
+  },
+   { 
+    title: "Dapur Sasha",
+    description: "Dapur Sasha adalah usaha mikro yang lahir dari kecintaan keluarga pada cita rasa tradisional dan semangat menghadirkan kue pesta yang berkesan. Berawal dari dapur rumahan, UMKM ini kini dikenal sebagai penyedia jajanan pasar autentik—mulai dari arem-arem berisi sayur dan ayam berbumbu, prastel nan lembut, risol renyah berisi ragout gurih, hingga pudding aneka rasa yang segar—semuanya dibuat setiap hari dari bahan segar pilihan agar kualitas rasa tetap terjaga.",
+    image:"/img/dapur-sasha/kue-tar.jpeg",
+  },
+  {
+    title: "Kerajinan Bambu Pak Yanto",
+    description: "Pak Yanto adalah salah satu pengrajin bambu unggulan dari Kalurahan Ngloro yang telah menekuni seni kerajinan ini selama lebih dari 5 tahun. Dengan keterampilan tangan yang terasah dan pengalaman panjang, beliau mampu menciptakan berbagai produk bernilai seni tinggi, mulai dari anyaman tradisional, perabot rumah tangga, hingga hiasan dekoratif yang ramah lingkungan.",
+    image: "/img/bambu-yanto1.jpeg"
+  }
+]
+
+
+export const saranaPrasarana = [
+  {
+    nama: "Balai Padukuhan",
+    gambar: "/img/balai-dusun-gebang/balai-dusun-gebang1.jpeg",
+    deskripsi: "Balai Padukuhan merupakan fasilitas umum yang digunakan sebagai tempat pertemuan, musyawarah warga, kegiatan Posyandu, serta berbagai acara dan kegiatan lainnya di tingkat padukuhan. Balai ini berlokasi di RT 16 (Kayutowo) Dusun Gebang."
+  },
+   {
+    nama: "Lapangan Voli",
+    gambar: "/img/lapangan-voli.jpeg",
+    deskripsi: "Lapangan Dusun Gebang merupakan fasilitas umum yang digunakan sebagai tempat kegiatan olahraga dan berkumpulnya warga, seperti bermain voli, sepak bola, dan kegiatan senam. Selain itu, lapangan ini juga menjadi lokasi pelaksanaan acara masyarakat, seperti lomba Agustusan dan kegiatan lainnya yang bersifat komunal. Lapangan ini berada di samping jalan utama Dusun Gebang, sehingga mudah diakses oleh seluruh warga."
+  },
+  {
+    nama: "MADRASAH Ibtidaiyah Negeri (MIN) 10",
+    gambar: "/img/mi-10.jpeg",
+    deskripsi: "Madrasah Ibtidaiyah Negeri (MIN) 10 Gunungkidul merupakan lembaga pendidikan dasar formal yang berada di bawah naungan Kementerian Agama. Sekolah ini menyediakan pendidikan berbasis agama Islam untuk jenjang pendidikan dasar (setara SD), dengan kurikulum terpadu antara pelajaran umum dan keagamaan. MIN 10 tidak hanya berfokus pada pengembangan akademik, tetapi juga membentuk karakter siswa melalui kegiatan keagamaan dan sosial. Madrasah ini menjadi salah satu pusat pendidikan penting di wilayah Dusun Gebang dan sekitarnya. MIN 10 ini terletak di RT 17 Dusun Gebang."
+  }
+  ,
+  {
+    nama: "Mushola RT 16",
+    gambar: "/img/mushola-rt16.jpg",
+    deskripsi: "Mushola RT 16 merupakan sarana ibadah yang digunakan oleh warga Dusun Gebang, khususnya di wilayah Kayutowo, untuk melaksanakan salat berjamaah dan kegiatan keagamaan lainnya. Mushola ini menjadi tempat penting bagi warga untuk mempererat silaturahmi, terutama dalam kegiatan keagamaan seperti pengajian dan salat tarawih saat Ramadan. Letaknya yang strategis di lingkungan RT 16 membuat mushola ini mudah diakses dan aktif digunakan oleh masyarakat sekitar."
+  },
+  {
+    nama: "Masjid Gebang",
+    gambar: "/img/masjid-gebang.jpg",
+    deskripsi: "Masjid Gebang adalah masjid utama di Dusun Gebang yang berperan sebagai pusat kegiatan ibadah dan keagamaan masyarakat. Selain digunakan untuk salat lima waktu dan salat Jumat, masjid ini juga menyelenggarakan kegiatan TPA (Taman Pendidikan Al-Qur'an) secara rutin, yang menjadi wadah bagi anak-anak untuk belajar membaca Al-Qur'an dan memahami ajaran Islam. Kegiatan TPA ini menjadi bagian penting dalam pembinaan karakter islami generasi muda di dusun. Masjid ini terletak di lokasi yang mudah dijangkau dan menjadi simbol keagamaan masyarakat Dusun Gebang."
+  },
+  {
+    nama: "Mushola RT 18 & 19",
+    gambar: "/img/mushola-sidowayah.jpeg",
+    deskripsi: "Mushola yang terletak di wilayah RT 18 dan RT 19, dikenal juga sebagai Mushola Sidowayah, menjadi tempat ibadah sekaligus pusat kegiatan keagamaan warga di sekitar wilayah tersebut. Selain digunakan untuk salat berjamaah, mushola ini aktif menyelenggarakan kegiatan TPA (Taman Pendidikan Al-Qur'an) secara rutin setiap minggunya. TPA ini memberikan pendidikan Al-Qur’an bagi anak-anak dan remaja, sehingga berperan penting dalam pembinaan rohani generasi muda. Mushola ini juga menjadi tempat berkumpul warga dalam kegiatan-kegiatan keagamaan seperti pengajian dan doa bersama."
+  }
+]

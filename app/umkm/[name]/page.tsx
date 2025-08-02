@@ -51,6 +51,7 @@ import DisplayListImages from "@/app/ui/DisplayListImages";
 import DisplayListProductImages from "@/app/ui/DisplayListProductImages";
 import toast from "react-hot-toast";
 import { Skeleton } from "@/components/ui/skeleton";
+import { umkmFetcherCard } from "@/lib/api";
 
 function UMKMDetail() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -68,6 +69,8 @@ function UMKMDetail() {
     longitude: -100,
     latitude: 40,
   });
+
+  const [currentItems, setCurrentItems] = useState<UMKMCard[]>([]);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -194,26 +197,7 @@ function UMKMDetail() {
   };
 
   useEffect(() => {
-    let foundData = dataUMKMUnggulan.find(
-      (item) => item.title === name.replaceAll("%20", " ")
-    );
-    setDescriptions(
-      foundData?.description.split("\n").filter((p) => p.trim() !== "")!
-    );
-    setData(foundData);
-
-    fetchWeather({
-      lat: foundData?.latitude || -40,
-      lon: foundData?.longitude || 100,
-    })
-      .then((weather) => {
-        setTemperateure2m(weather.temperature2m);
-        setWeatherCode(weather.weatherCode);
-        weatherCodeToIconString(weather.weatherCode);
-      })
-      .catch((error) => {
-        console.error("Error fetching weather data:", error);
-      });
+    umkmFetcherCard().then((items) => setCurrentItems(items));
 
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight * 0.7) {
@@ -237,6 +221,29 @@ function UMKMDetail() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    let foundData = currentItems.find(
+      (item) => item.title === name.replaceAll("%20", " ")
+    );
+    setDescriptions(
+      foundData?.description.split("\n").filter((p) => p.trim() !== "")!
+    );
+    setData(foundData);
+
+    fetchWeather({
+      lat: foundData?.latitude || -40,
+      lon: foundData?.longitude || 100,
+    })
+      .then((weather) => {
+        setTemperateure2m(weather.temperature2m);
+        setWeatherCode(weather.weatherCode);
+        weatherCodeToIconString(weather.weatherCode);
+      })
+      .catch((error) => {
+        console.error("Error fetching weather data:", error);
+      });
+  }, [currentItems]);
 
   return (
     <div className="relative w-screen min-h-screen">

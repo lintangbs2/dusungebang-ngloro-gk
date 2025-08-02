@@ -8,6 +8,7 @@ import Maps from "../ui/Map";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Navbar from "../ui/Navbar";
 import Image from "next/image";
+import { Skeleton } from "@/components/ui/skeleton";
 
 function Destinations() {
   const [showMap, setShowMap] = useState(false);
@@ -110,12 +111,19 @@ function Destinations() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           <div className="col-span-2">
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
-              {currentItems.map((destination, index) => (
-                <DestinationCardComponent
-                  key={index}
-                  destination={destination}
-                />
-              ))}
+              {currentItems.length > 0
+                ? currentItems.map((destination, index) => (
+                    <DestinationCardComponent
+                      key={index}
+                      destination={destination}
+                    />
+                  ))
+                : Array.from({ length: 9 }).map((_, index) => (
+                    <Skeleton
+                      key={index}
+                      className="relative w-40 h-34 sm:w-44 sm:h-34 md:w-56 md:h-40 xl:w-70 xl:h-60"
+                    ></Skeleton>
+                  ))}
             </div>
 
             <ReactPaginate
@@ -132,12 +140,16 @@ function Destinations() {
             />
           </div>
           <div className="hidden lg:block h-[95%] rounded-xl">
-            <Maps
-              places={currentItems}
-              largeScreen={true}
-              centerLatitude={-8.12023}
-              centerLongitude={110.51843}
-            />
+            {currentItems.length > 0 ? (
+              <Maps
+                places={currentItems}
+                largeScreen={true}
+                centerLatitude={-8.12023}
+                centerLongitude={110.51843}
+              />
+            ) : (
+              <Skeleton className="relative w-full h-full rounded-xl"></Skeleton>
+            )}
           </div>
         </div>
       </div>
@@ -156,14 +168,14 @@ function DestinationCardComponent({
       href={`/destinations/${destination.name}`}
     >
       <div
-        className="relative w-40 h-34 sm:w-44 sm:h-34 md:w-56 md:h-44 xl:w-78 xl:h-60
-              group-hover:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden  "
+        className="group relative w-40 h-34 sm:w-44 sm:h-34 md:w-56 md:h-40 xl:w-70 xl:h-60
+              group-hover:scale-[98%]  group-active:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden  "
       >
         <Image
           src={destination.thumbnail!}
           alt={destination.name}
           fill
-          className="rounded-lg object-cover group-hover:scale-110 transform ease-in-out
+          className="rounded-lg object-cover group-hover:scale-110 group-active:scale-110 transform ease-in-out
                   duration-400 transition-transform"
         />
       </div>

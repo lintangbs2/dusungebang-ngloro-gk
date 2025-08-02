@@ -248,7 +248,7 @@ function EventDetail() {
       <Navbar />
 
       {data && calendarEvents.length > 0 ? (
-        <div className="pt-24 container pr-6">
+        <div className="pt-24 container ">
           <h1 className="!text-[#272726] font-bold">{data?.name}</h1>
           <span className="!text-[#F3C725] font-bold">Acara</span>{" "}
           <span className="!text-[#686867]">{data?.kelurahan}</span>
@@ -311,8 +311,7 @@ function EventDetail() {
         z-1 absolute  ${
           modalDetailType == "contact"
             ? `animate-open-modal origin-top`
-            : `hidden`
-        }`}
+            : `hidden` }`}
           >
             <div className="flex flex-col items-start ">
               <span className="!text-[#272726] font-bold">Kontak</span>
@@ -806,7 +805,7 @@ function EventDetail() {
           </div>
         </div>
       ) : (
-        <div className="pt-24 container pr-6">
+        <div className="pt-24 container ">
           <Skeleton className="relative h-[202px] md:h-[500px] lg:h-[670px] mt-6" />
           <div className="md:grid md:grid-cols-5 md:gap-8 mt-12">
             <Skeleton className="col-span-4 h-60" />

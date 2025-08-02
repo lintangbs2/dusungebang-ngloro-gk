@@ -4,9 +4,11 @@ import React from "react";
 
 function DisplayCards(props: { cards: UMKMCard[] }) {
   const groups: { type: "single" | "double"; cards: UMKMCard[] }[] = [];
-  const cards = props.cards;
+  const cards = props.cards.slice(0, 10);
   let i = 0;
+  console.log("cards: ", cards);
   while (i < cards.length) {
+    console.log("i: ", i);
     if (i % 5 != 0) {
       let doubleCards: any = [];
       while (i < cards.length && i % 5 != 0) {
@@ -30,13 +32,15 @@ function DisplayCards(props: { cards: UMKMCard[] }) {
               <a
                 href={`/umkm/${card.title}`}
                 className="relative h-[168px] md:h-[360px] lg:h-[480px] flex-shrink-0 cursor-pointer
-                group hover:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden"
+                group hover:scale-[98%] active:scale-[98%] rounded-lg transition-all duration-400 
+                ease-in-out overflow-hidden"
               >
                 <Image
                   src={card.image}
                   alt={card.alt}
                   fill
-                  className="rounded-lg object-cover group-hover:scale-110 transform ease-in-out duration-400 transition-transform"
+                  className="rounded-lg object-cover group-hover:scale-110 group-active:scale-110
+                   transform ease-in-out duration-400 transition-transform"
                 />
                 <h3 className="text-white absolute bottom-2 left-2 font-bold italic">
                   {card.title}
@@ -52,15 +56,16 @@ function DisplayCards(props: { cards: UMKMCard[] }) {
             >
               {group.cards.map((card, idx) => (
                 <a
+                  key={idx}
                   href={`/umkm/${card.title}`}
                   className="relative h-[168px] md:h-[360px] lg:h-[480px] flex-shrink-0 cursor-pointer
-                 group hover:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden "
+                 group hover:scale-[98%] active:scale-[98%] rounded-lg transition-all duration-400 ease-in-out overflow-hidden "
                 >
                   <Image
                     src={card.image}
                     alt={card.alt}
                     fill
-                    className="rounded-lg object-cover group-hover:scale-110 transform ease-in-out duration-400 transition-transform"
+                    className="rounded-lg object-cover group-hover:scale-110 group-active:scale-110 transform ease-in-out duration-400 transition-transform"
                   />
                   <h3 className="text-white absolute bottom-2 left-2 font-bold italic">
                     {card.title}
